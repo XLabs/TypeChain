@@ -7,7 +7,7 @@ import {
   EventDeclaration,
   FunctionDeclaration,
   StructType,
-} from 'typechain'
+} from '@xlabs-xyz/typechain'
 
 import { FACTORY_POSTFIX, STRUCT_INPUT_POSTFIX } from '../common'
 import {

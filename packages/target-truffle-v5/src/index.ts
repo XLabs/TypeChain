@@ -9,7 +9,7 @@ import {
   parse,
   shortenFullJsonFilePath,
   TypeChainTarget,
-} from 'typechain'
+} from '@xlabs-xyz/typechain'
 
 import { codegenArtifactHeaders } from './codegen'
 import { codegenContract } from './codegen/contracts'

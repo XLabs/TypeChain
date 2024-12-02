@@ -5,7 +5,7 @@ import {
   EventDeclaration,
   getFullSignatureAsSymbolForEvent,
   getFullSignatureForEvent,
-} from 'typechain'
+} from '@xlabs-xyz/typechain'
 
 import { codegenOutputType } from './types'
 

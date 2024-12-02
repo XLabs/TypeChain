@@ -9,7 +9,7 @@ import {
   getSignatureForFn,
   isConstant,
   isConstantFn,
-} from 'typechain'
+} from '@xlabs-xyz/typechain'
 
 import { generateInputType, generateInputTypes, generateOutputTypes } from './types'
 
