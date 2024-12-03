@@ -1,5 +1,5 @@
 import { expect } from 'earljs'
-import { CodegenConfig, Contract, EventDeclaration, parse, RawAbiDefinition } from 'typechain'
+import { CodegenConfig, Contract, EventDeclaration, parse, RawAbiDefinition } from '@xlabs-xyz/typechain'
 
 import { codegenContractFactory } from '../src/codegen'
 import { generateEventFilters } from '../src/codegen/events'

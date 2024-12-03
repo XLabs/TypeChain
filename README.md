@@ -196,7 +196,7 @@ Furthermore, TypeChain will silent `eslint` and `tslint` errors for generated fi
 ### Usage as API
 
 ```typescript
-import { runTypeChain, glob } from 'typechain'
+import { runTypeChain, glob } from '@xlabs-xyz/typechain'
 
 async function main() {
   const cwd = process.cwd()

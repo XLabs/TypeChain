@@ -20,7 +20,7 @@ import {
   parseContractPath,
   shortenFullJsonFilePath,
   TypeChainTarget,
-} from 'typechain'
+} from '@xlabs-xyz/typechain'
 
 import { codegenAbstractContractFactory, codegenContractFactory, codegenContractTypings } from './codegen'
 import { generateHardhatHelper } from './codegen/hardhat'

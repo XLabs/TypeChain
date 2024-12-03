@@ -6,7 +6,7 @@ import {
   getSignatureForFn,
   isConstant,
   isConstantFn,
-} from 'typechain'
+} from '@xlabs-xyz/typechain'
 
 import { codegenAllPossibleEvents, codegenEventsDeclarations } from './events'
 import { codegenInputTypes, codegenOutputTypes } from './types'
