@@ -17,7 +17,7 @@
   "devDependencies": {
     "ganache": "^7.8.0",
     "test-utils": "1.0.0",
-    "@xlabs-xyz/typechain": "workspace:^8.3.3"
+    "@xlabs-xyz/typechain": "workspace:^8.3.4"
   },
   "dependencies": {
     "@ethersproject/abi": "^5.0.0",

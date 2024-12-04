@@ -13,7 +13,7 @@
     "@typechain/ethers-v5": "workspace:^11.1.2",
     "@types/bn.js": "^5.1.0",
     "ts-node": "^10.7.0",
-    "@xlabs-xyz/typechain": "workspace:^8.3.3",
+    "@xlabs-xyz/typechain": "workspace:^8.3.4",
     "typescript": "^4.9.5"
   },
   "dependencies": {

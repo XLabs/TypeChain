@@ -13,7 +13,7 @@
     "@typechain/web3-v1": "workspace:^6.0.7",
     "@types/bn.js": "^4.11.6",
     "ts-node": "^10.7.0",
-    "@xlabs-xyz/typechain": "workspace:^8.3.3"
+    "@xlabs-xyz/typechain": "workspace:^8.3.4"
   },
   "dependencies": {
     "web3": "^1",
