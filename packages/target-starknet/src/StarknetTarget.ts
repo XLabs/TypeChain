@@ -10,7 +10,7 @@ import {
   parseContractPath,
   shortenFullJsonFilePath,
   TypeChainTarget,
-} from 'typechain'
+} from '@xlabs-xyz/typechain'
 
 import { importer } from './importer'
 

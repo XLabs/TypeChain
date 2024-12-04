@@ -10,7 +10,7 @@ import {
   parse,
   shortenFullJsonFilePath,
   TypeChainTarget,
-} from 'typechain'
+} from '@xlabs-xyz/typechain'
 
 import { codegen } from './codegen'
 

@@ -4,7 +4,7 @@ import {
   EventDeclaration,
   getFullSignatureAsSymbolForEvent,
   getFullSignatureForEvent,
-} from 'typechain'
+} from '@xlabs-xyz/typechain'
 
 import { generateInputType, generateOutputComplexTypeAsArray, generateOutputComplexTypesAsObject } from './types'
 

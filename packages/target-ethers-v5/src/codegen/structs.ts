@@ -1,5 +1,5 @@
 import { groupBy } from 'lodash'
-import { StructName, StructType } from 'typechain'
+import { StructName, StructType } from '@xlabs-xyz/typechain'
 
 import { STRUCT_INPUT_POSTFIX, STRUCT_OUTPUT_POSTFIX } from '../common'
 import { generateInputType, generateOutputType } from './types'
