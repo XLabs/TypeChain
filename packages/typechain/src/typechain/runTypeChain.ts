@@ -8,6 +8,7 @@ import { detectInputsRoot } from '../utils/files'
 import { findTarget } from './findTarget'
 import { loadFileDescriptions, processOutput, skipEmptyAbis } from './io'
 import { CodegenConfig, Config, FileDescription, PublicConfig, Services } from './types'
+import { extractAbi } from '../parser/abiParser'
 
 interface Result {
   filesGenerated: number
@@ -66,12 +67,8 @@ export async function runTypeChain(publicConfig: PublicConfig): Promise<Result> 
 }
 
 export async function runTypeChainInMemory(publicConfig: Omit<PublicConfig, "filesToProcess">, fileDescriptions: FileDescription[]): Promise<Result> {
-  const allFiles = skipEmptyAbis(publicConfig.allFiles)
-  if (allFiles.length === 0) {
-    return {
-      filesGenerated: 0,
-    }
-  }
+  
+  const allFiles = (fileDescriptions.filter((fd) => extractAbi(fd.contents).length !== 0)).map(fd => fd.path)
 
   // skip empty paths
   const config: Config = {
@@ -81,16 +78,15 @@ export async function runTypeChainInMemory(publicConfig: Omit<PublicConfig, "fil
     allFiles,
     filesToProcess: [],
   }
+
   const services: Services = {
     fs,
-    prettier,
+    prettier: { format: (s: string) => { return s } } as typeof prettier,
     mkdirp,
   }
   let filesGenerated = 0
 
   const target = findTarget(config)
-
-  // const fileDescriptions = loadFileDescriptions(services, config.filesToProcess)
 
   debug('Executing beforeRun()')
   filesGenerated += processOutput(services, config, await target.beforeRun())
