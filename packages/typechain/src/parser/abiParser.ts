@@ -376,12 +376,6 @@ export function extractAbi(rawJson: string): RawAbiDefinition[] {
     return json.compilerOutput.abi
   }
 
-  // solc-output alternative
-  const solcData = (Object.values(json)[0] as any)['abi'];
-  if (Array.isArray(solcData)) {
-    return solcData;
-  }
-
   throw new MalformedAbiError('Not a valid ABI')
 }
 
