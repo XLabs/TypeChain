@@ -377,7 +377,7 @@ export function extractAbi(rawJson: string): RawAbiDefinition[] {
   }
 
   // solc-output alternative
-  const solcData = (Object.values(json)[0] as any)['abi'];
+  const solcData = (Object.values(json)[0] as any).abi;
   if (Array.isArray(solcData)) {
     return solcData;
   }
