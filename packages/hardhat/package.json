@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "^3.0.0",
-    "@typechain/ethers-v6": "workspace:^0.5.1",
+    "@xlabs-xyz/typechain-ethers-v6": "workspace:^0.5.1",
     "@types/fs-extra": "^9.0.7",
     "@types/rimraf": "^3.0.0",
     "ethers": "^6.1.0",
@@ -44,7 +44,7 @@
     "typescript": "^4"
   },
   "peerDependencies": {
-    "@typechain/ethers-v6": "workspace:^0.5.1",
+    "@xlabs-xyz/typechain-ethers-v6": "workspace:^0.5.1",
     "ethers": "^6.1.0",
     "hardhat": "^2.9.9",
     "@xlabs-xyz/typechain": "workspace:^8.3.4"

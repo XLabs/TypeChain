@@ -124,15 +124,15 @@ importers:
         specifier: ^6.1.0
         version: 6.1.0(bufferutil@4.0.6)(utf-8-validate@5.0.9)
     devDependencies:
-      '@typechain/ethers-v6':
-        specifier: workspace:^0.5.1
-        version: link:../../packages/target-ethers-v6
       '@types/bn.js':
         specifier: ^5.1.0
         version: 5.1.0
       '@xlabs-xyz/typechain':
         specifier: workspace:^8.3.4
         version: link:../../packages/typechain
+      '@xlabs-xyz/typechain-ethers-v6':
+        specifier: workspace:^0.5.1
+        version: link:../../packages/target-ethers-v6
       ts-node:
         specifier: ^10.7.0
         version: 10.7.0(@types/node@18.14.0)(typescript@4.9.5)
@@ -146,15 +146,15 @@ importers:
         specifier: ^6.1.0
         version: 6.3.0(bufferutil@4.0.6)(utf-8-validate@5.0.9)
     devDependencies:
-      '@typechain/ethers-v6':
-        specifier: workspace:^0.5.1
-        version: link:../../packages/target-ethers-v6
       '@types/bn.js':
         specifier: ^5.1.0
         version: 5.1.0
       '@xlabs-xyz/typechain':
         specifier: workspace:^8.3.4
         version: link:../../packages/typechain
+      '@xlabs-xyz/typechain-ethers-v6':
+        specifier: workspace:^0.5.1
+        version: link:../../packages/target-ethers-v6
       ts-node:
         specifier: ^10.7.0
         version: 10.7.0(@types/node@18.14.0)(typescript@4.9.5)
@@ -179,9 +179,6 @@ importers:
       '@nomicfoundation/hardhat-ethers':
         specifier: ^3.0.4
         version: 3.0.4(ethers@6.3.0(bufferutil@4.0.6)(utf-8-validate@5.0.9))(hardhat@2.9.9(bufferutil@4.0.6)(ts-node@10.7.0(@types/node@18.14.0)(typescript@4.9.5))(typescript@4.9.5)(utf-8-validate@5.0.9))
-      '@typechain/ethers-v6':
-        specifier: workspace:^0.5.1
-        version: link:../../packages/target-ethers-v6
       '@typechain/hardhat':
         specifier: workspace:^9.1.0
         version: link:../../packages/hardhat
@@ -200,6 +197,9 @@ importers:
       '@xlabs-xyz/typechain':
         specifier: workspace:^8.3.4
         version: link:../../packages/typechain
+      '@xlabs-xyz/typechain-ethers-v6':
+        specifier: workspace:^0.5.1
+        version: link:../../packages/target-ethers-v6
       chai:
         specifier: ^4.3.0
         version: 4.3.6
@@ -382,9 +382,6 @@ importers:
       '@nomicfoundation/hardhat-ethers':
         specifier: ^3.0.0
         version: 3.0.0(ethers@6.3.0(bufferutil@4.0.6)(utf-8-validate@5.0.9))(hardhat@2.9.9(bufferutil@4.0.6)(ts-node@10.7.0(@types/node@18.14.0)(typescript@4.6.2))(typescript@4.6.2)(utf-8-validate@5.0.9))
-      '@typechain/ethers-v6':
-        specifier: workspace:^0.5.1
-        version: link:../target-ethers-v6
       '@types/fs-extra':
         specifier: ^9.0.7
         version: 9.0.13
@@ -394,6 +391,9 @@ importers:
       '@xlabs-xyz/typechain':
         specifier: workspace:^8.3.4
         version: link:../typechain
+      '@xlabs-xyz/typechain-ethers-v6':
+        specifier: workspace:^0.5.1
+        version: link:../target-ethers-v6
       ethers:
         specifier: ^6.1.0
         version: 6.3.0(bufferutil@4.0.6)(utf-8-validate@5.0.9)
@@ -418,15 +418,15 @@ importers:
       '@nomicfoundation/hardhat-ethers':
         specifier: ^3.0.0
         version: 3.0.0(ethers@6.3.0(bufferutil@4.0.6)(utf-8-validate@5.0.9))(hardhat@2.9.9(bufferutil@4.0.6)(ts-node@10.7.0(@types/node@18.14.0)(typescript@4.9.5))(typescript@4.9.5)(utf-8-validate@5.0.9))
-      '@typechain/ethers-v6':
-        specifier: workspace:^0.5.1
-        version: link:../target-ethers-v6
       '@typechain/hardhat':
         specifier: workspace:^9.1.0
         version: link:../hardhat
       '@xlabs-xyz/typechain':
         specifier: workspace:^8.3.4
         version: link:../typechain
+      '@xlabs-xyz/typechain-ethers-v6':
+        specifier: workspace:^0.5.1
+        version: link:../target-ethers-v6
       ethers:
         specifier: ~6.3.0
         version: 6.3.0(bufferutil@4.0.6)(utf-8-validate@5.0.9)
