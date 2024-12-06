@@ -10,7 +10,7 @@
 
 - Updated dependencies [3469800]
   - typechain@8.3.2
-  - @typechain/ethers-v6@0.5.1
+  - @xlabs-xyz/typechain-ethers-v6@0.5.1
 
 ## 9.0.0
 
@@ -18,7 +18,7 @@
 
 - Updated dependencies [04ebda9]
 - Updated dependencies [64d18f7]
-  - @typechain/ethers-v6@0.5.0
+  - @xlabs-xyz/typechain-ethers-v6@0.5.0
 
 ## 8.0.3
 
@@ -26,7 +26,7 @@
 
 - Updated dependencies [9107713]
   - typechain@8.3.1
-  - @typechain/ethers-v6@0.4.3
+  - @xlabs-xyz/typechain-ethers-v6@0.4.3
 
 ## 8.0.2
 
@@ -34,7 +34,7 @@
 
 - Updated dependencies [c4720b9]
   - typechain@8.3.0
-  - @typechain/ethers-v6@0.4.2
+  - @xlabs-xyz/typechain-ethers-v6@0.4.2
 
 ## 8.0.1
 
@@ -43,7 +43,7 @@
 - c2b3f1b: Support for the newest hardhat-ethers version
 - Updated dependencies [c2b3f1b]
 - Updated dependencies [cd4bb0f]
-  - @typechain/ethers-v6@0.4.1
+  - @xlabs-xyz/typechain-ethers-v6@0.4.1
   - typechain@8.2.1
 
 ## 8.0.0
@@ -55,7 +55,7 @@
 ### Patch Changes
 
 - Updated dependencies [2380a8f]
-  - @typechain/ethers-v6@0.4.0
+  - @xlabs-xyz/typechain-ethers-v6@0.4.0
 
 ## 7.0.0
 

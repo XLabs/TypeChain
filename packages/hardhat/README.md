@@ -20,7 +20,7 @@ Automatically generate TypeScript bindings for smartcontracts while using [Hardh
 If you use Ethers do:
 
 ```bash
-npm install --save-dev typechain @typechain/hardhat @typechain/ethers-v6
+npm install --save-dev typechain @typechain/hardhat @xlabs-xyz/typechain-ethers-v6
 ```
 
 If you're a Truffle user you need:

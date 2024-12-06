@@ -1,4 +1,4 @@
-# @typechain/ethers-v6
+# @xlabs-xyz/typechain-ethers-v6
 
 ## 0.5.1
 
