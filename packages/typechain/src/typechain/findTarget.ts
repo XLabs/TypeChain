@@ -12,7 +12,7 @@ export function findTarget(config: CliConfig): TypeChainTarget {
   }
 
   const possiblePaths = [
-    `@typechain/${target}`, // external module
+    `@xlabs-xyz/typechain-${target}`, // external module
     `typechain-target-${target}`, // external module
     ensureAbsPath(target), // path
   ]
@@ -23,7 +23,7 @@ export function findTarget(config: CliConfig): TypeChainTarget {
     throw new Error(
       `Couldn't find ${config.target}. Tried loading: ${compact(possiblePaths).join(
         ', ',
-      )}.\nPerhaps you forgot to install @typechain/${target}?`,
+      )}.\nPerhaps you forgot to install @xlabs-xyz/typechain-${target}?`,
     )
   }
 
