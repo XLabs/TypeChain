@@ -7,7 +7,7 @@ import { debug } from '../utils/debug'
 import { detectInputsRoot } from '../utils/files'
 import { findTarget } from './findTarget'
 import { loadFileDescriptions, processOutput, skipEmptyAbis } from './io'
-import { CliConfig, CodegenConfig, FileDescription, InMemoryConfig, PublicConfig, PublicInMemoryConfig, Services, TypeChainTarget } from './types'
+import { CliConfig, CodegenConfig, Config, FileDescription, InMemoryConfig, PublicConfig, PublicInMemoryConfig, Services, TypeChainTarget } from './types'
 import { extractAbi } from '../parser/abiParser'
 
 interface Result {
@@ -66,8 +66,11 @@ export async function runTypeChain(publicConfig: PublicConfig): Promise<Result> 
   }
 }
 
-export async function runTypeChainInMemory(publicConfig: PublicInMemoryConfig, fileDescriptions: FileDescription[], target: TypeChainTarget): Promise<Result> {
-  
+export async function runTypeChainInMemory(
+  publicConfig: PublicInMemoryConfig,
+  fileDescriptions: FileDescription[],
+  plugin: new (config: Config) => TypeChainTarget
+): Promise<Result> {
   const allFiles = (fileDescriptions.filter((fd) => extractAbi(fd.contents).length !== 0)).map(fd => fd.path)
 
   const config = {
@@ -76,6 +79,7 @@ export async function runTypeChainInMemory(publicConfig: PublicInMemoryConfig, f
     ...publicConfig,
     allFiles,
   } satisfies InMemoryConfig
+  const target = new plugin(config)
 
   const services: Services = {
     fs,
