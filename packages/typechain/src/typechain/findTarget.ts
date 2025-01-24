@@ -3,16 +3,16 @@ import _, { compact } from 'lodash'
 import { debug } from '../utils/debug'
 import { ensureAbsPath } from '../utils/files/ensureAbsPath'
 import { tryRequire } from '../utils/modules'
-import { Config, TypeChainTarget } from './types'
+import { CliConfig, TypeChainTarget } from './types'
 
-export function findTarget(config: Config): TypeChainTarget {
+export function findTarget(config: CliConfig): TypeChainTarget {
   const target = config.target
   if (!target) {
     throw new Error(`Please provide --target parameter!`)
   }
 
   const possiblePaths = [
-    `@typechain/${target}`, // external module
+    `@xlabs-xyz/typechain-${target}`, // external module
     `typechain-target-${target}`, // external module
     ensureAbsPath(target), // path
   ]
@@ -23,7 +23,7 @@ export function findTarget(config: Config): TypeChainTarget {
     throw new Error(
       `Couldn't find ${config.target}. Tried loading: ${compact(possiblePaths).join(
         ', ',
-      )}.\nPerhaps you forgot to install @typechain/${target}?`,
+      )}.\nPerhaps you forgot to install @xlabs-xyz/typechain-${target}?`,
     )
   }
 

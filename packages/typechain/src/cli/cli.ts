@@ -2,7 +2,7 @@
 import * as prettier from 'prettier'
 
 import { runTypeChain } from '../typechain/runTypeChain'
-import { Config } from '../typechain/types'
+import { CliConfig } from '../typechain/types'
 import { detectInputsRoot } from '../utils/files'
 import { glob } from '../utils/glob'
 import { logger } from '../utils/logger'
@@ -18,7 +18,7 @@ async function main() {
     throw new Error('No files passed.' + '\n' + `\`${cliConfig.files}\` didn't match any input files in ${cwd}`)
   }
 
-  const config: Config = {
+  const config = {
     cwd,
     target: cliConfig.target,
     outDir: cliConfig.outDir,
@@ -30,7 +30,7 @@ async function main() {
       ...cliConfig.flags,
       environment: undefined,
     },
-  }
+  } satisfies CliConfig
 
   const result = await runTypeChain(config)
   // eslint-disable-next-line no-console
