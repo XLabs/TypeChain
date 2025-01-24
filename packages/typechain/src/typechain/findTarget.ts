@@ -3,9 +3,9 @@ import _, { compact } from 'lodash'
 import { debug } from '../utils/debug'
 import { ensureAbsPath } from '../utils/files/ensureAbsPath'
 import { tryRequire } from '../utils/modules'
-import { Config, TypeChainTarget } from './types'
+import { CliConfig, TypeChainTarget } from './types'
 
-export function findTarget(config: Config): TypeChainTarget {
+export function findTarget(config: CliConfig): TypeChainTarget {
   const target = config.target
   if (!target) {
     throw new Error(`Please provide --target parameter!`)

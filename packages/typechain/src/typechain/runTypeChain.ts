@@ -7,7 +7,7 @@ import { debug } from '../utils/debug'
 import { detectInputsRoot } from '../utils/files'
 import { findTarget } from './findTarget'
 import { loadFileDescriptions, processOutput, skipEmptyAbis } from './io'
-import { CodegenConfig, Config, FileDescription, PublicConfig, Services } from './types'
+import { CliConfig, CodegenConfig, FileDescription, InMemoryConfig, PublicConfig, PublicInMemoryConfig, Services } from './types'
 import { extractAbi } from '../parser/abiParser'
 
 interface Result {
@@ -30,13 +30,13 @@ export async function runTypeChain(publicConfig: PublicConfig): Promise<Result> 
   }
 
   // skip empty paths
-  const config: Config = {
+  const config = {
     flags: DEFAULT_FLAGS,
     inputDir: detectInputsRoot(allFiles),
     ...publicConfig,
     allFiles,
     filesToProcess: skipEmptyAbis(publicConfig.filesToProcess),
-  }
+  } satisfies CliConfig
   const services: Services = {
     fs,
     prettier,
@@ -66,27 +66,25 @@ export async function runTypeChain(publicConfig: PublicConfig): Promise<Result> 
   }
 }
 
-export async function runTypeChainInMemory(publicConfig: Omit<PublicConfig, "filesToProcess">, fileDescriptions: FileDescription[]): Promise<Result> {
+export async function runTypeChainInMemory(publicConfig: PublicInMemoryConfig, fileDescriptions: FileDescription[]): Promise<Result> {
   
   const allFiles = (fileDescriptions.filter((fd) => extractAbi(fd.contents).length !== 0)).map(fd => fd.path)
 
-  // skip empty paths
-  const config: Config = {
+  const config = {
     flags: DEFAULT_FLAGS,
     inputDir: detectInputsRoot(allFiles),
     ...publicConfig,
     allFiles,
-    filesToProcess: [],
-  }
+  } satisfies InMemoryConfig
 
   const services: Services = {
     fs,
-    prettier: { format: (s: string) => { return s } } as typeof prettier,
+    prettier: { format: (s: string) => s } as typeof prettier,
     mkdirp,
   }
   let filesGenerated = 0
 
-  const target = findTarget(config)
+  const {target} = config
 
   debug('Executing beforeRun()')
   filesGenerated += processOutput(services, config, await target.beforeRun())

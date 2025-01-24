@@ -5,10 +5,8 @@ import { MarkOptional } from 'ts-essentials'
 
 export interface Config {
   cwd: string
-  target: string
   outDir?: string | undefined
   prettier?: object | undefined
-  filesToProcess: string[] // filesToProcess is a subset of allFiles, used during incremental generating
   allFiles: string[]
   /**
    * Optional path to directory with ABI files.
@@ -16,6 +14,15 @@ export interface Config {
    */
   inputDir: string
   flags: CodegenConfig
+}
+
+export interface CliConfig extends Config {
+  target: string
+  filesToProcess: string[] // filesToProcess is a subset of allFiles, used during incremental generating
+}
+
+export interface InMemoryConfig extends Config {
+  target: TypeChainTarget
 }
 
 // @note: these options ale mostly supported only by ethers-v5 target
@@ -27,7 +34,8 @@ export interface CodegenConfig {
   environment: 'hardhat' | undefined
 }
 
-export type PublicConfig = MarkOptional<Config, 'flags' | 'inputDir'>
+export type PublicConfig = MarkOptional<CliConfig, 'flags' | 'inputDir'>
+export type PublicInMemoryConfig = MarkOptional<InMemoryConfig, 'flags' | 'inputDir'>
 
 export abstract class TypeChainTarget {
   public abstract readonly name: string
