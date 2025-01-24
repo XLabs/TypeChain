@@ -21,9 +21,7 @@ export interface CliConfig extends Config {
   filesToProcess: string[] // filesToProcess is a subset of allFiles, used during incremental generating
 }
 
-export interface InMemoryConfig extends Config {
-  target: TypeChainTarget
-}
+export interface InMemoryConfig extends Config {}
 
 // @note: these options ale mostly supported only by ethers-v5 target
 export interface CodegenConfig {

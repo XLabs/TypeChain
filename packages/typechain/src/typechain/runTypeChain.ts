@@ -7,7 +7,7 @@ import { debug } from '../utils/debug'
 import { detectInputsRoot } from '../utils/files'
 import { findTarget } from './findTarget'
 import { loadFileDescriptions, processOutput, skipEmptyAbis } from './io'
-import { CliConfig, CodegenConfig, FileDescription, InMemoryConfig, PublicConfig, PublicInMemoryConfig, Services } from './types'
+import { CliConfig, CodegenConfig, FileDescription, InMemoryConfig, PublicConfig, PublicInMemoryConfig, Services, TypeChainTarget } from './types'
 import { extractAbi } from '../parser/abiParser'
 
 interface Result {
@@ -66,7 +66,7 @@ export async function runTypeChain(publicConfig: PublicConfig): Promise<Result> 
   }
 }
 
-export async function runTypeChainInMemory(publicConfig: PublicInMemoryConfig, fileDescriptions: FileDescription[]): Promise<Result> {
+export async function runTypeChainInMemory(publicConfig: PublicInMemoryConfig, fileDescriptions: FileDescription[], target: TypeChainTarget): Promise<Result> {
   
   const allFiles = (fileDescriptions.filter((fd) => extractAbi(fd.contents).length !== 0)).map(fd => fd.path)
 
@@ -83,8 +83,6 @@ export async function runTypeChainInMemory(publicConfig: PublicInMemoryConfig, f
     mkdirp,
   }
   let filesGenerated = 0
-
-  const {target} = config
 
   debug('Executing beforeRun()')
   filesGenerated += processOutput(services, config, await target.beforeRun())
